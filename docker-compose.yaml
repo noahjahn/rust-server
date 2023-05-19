@@ -1,0 +1,21 @@
+version: '3'
+services:
+  rust:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - rust:/home/steam/rust
+    env_file:
+      - .env
+    ports:
+      - 28015:28015/udp
+      - 28015:28015/tcp
+      - 28016:28016/udp
+      - 28016:28016/tcp
+      - 28083:28083/udp
+      - 28083:28083/tcp
+
+volumes:
+  rust:
