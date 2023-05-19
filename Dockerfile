@@ -23,7 +23,7 @@ ENV LOGFILE="2>&1"
 ENV SERVER_PATH="/home/steam/rust"
 ENV LD_LIBRARY_PATH="./RustDedicated_Data/Plugins/x86_64"
 
-RUN ./steamcmd.sh +login anonymous +force_install_dir $SERVER_PATH +app_update 258550 validate +quit
+RUN ./steamcmd.sh +force_install_dir $SERVER_PATH +login anonymous +app_update 258550 validate +quit
 
 COPY --chown=steam:steam bin/run.sh /home/steam/rust
 
